@@ -4,10 +4,30 @@ import Answer from "./Answer";
 function Answers(props) {
   return (
     <>
-      <Answer letter="A" answer="Framework" />
-      <Answer letter="B" answer="Framework" />
-      <Answer letter="C" answer="Framework" />
-      <Answer letter="D" answer="Framework" />
+      <Answer
+        letter="a"
+        answer={props.answer.answer_a}
+        handleClick={props.handleClick}
+        selected={props.currentAnswer === "a"}
+      />
+      <Answer
+        letter="b"
+        answer={props.answer.answer_b}
+        handleClick={props.handleClick}
+        selected={props.currentAnswer === "b"}
+      />
+      <Answer
+        letter="c"
+        answer={props.answer.answer_c}
+        handleClick={props.handleClick}
+        selected={props.currentAnswer === "c"}
+      />
+      <Answer
+        letter="d"
+        answer={props.answer.answer_d}
+        handleClick={props.handleClick}
+        selected={props.currentAnswer === "d"}
+      />
     </>
   );
 }

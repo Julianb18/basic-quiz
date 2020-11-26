@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Progress from "./components/Progress";
 import Question from "./components/Question";
 import Answers from "./components/Answers";
 import "./App.css";
 
 function App() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentAnswer, setCurrentAnswer] = useState("");
+
   const questions = [
     {
       id: 1,
@@ -36,11 +39,21 @@ function App() {
       correct_answer: "c",
     },
   ];
+
+  const questionData = questions[currentQuestion];
+
+  const handleClick = (e) => {
+    setCurrentAnswer(e.target.value);
+  };
   return (
     <div className="container">
       <Progress total="3" current="1" />
-      <Question question="what is react?" />
-      <Answers />
+      <Question question={questionData.question} />
+      <Answers
+        answer={questionData}
+        currentAnswer={currentAnswer}
+        handleClick={handleClick}
+      />
       <button className="btn btn-primary">Confirm & Continue</button>
     </div>
   );
