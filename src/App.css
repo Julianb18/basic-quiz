@@ -44,12 +44,12 @@ h2 {
   color: #c8ffbb;
 }
 
-.result span.failed {
-  color: #f27cfc;
+.results span.failed {
+  color: #fc7c7c;
 }
 
 .error {
-  color: #f27cfc;
+  color: #fc7c7c;
 }
 
 .letter {
